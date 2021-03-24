@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+
+        <audio id="musicplayer" autoplay loop>
+            <source src="/urgot.wav">
+        </audio>
+
+
+       <div>
+
+            <!-- create 3 stopwatches temp -->
+            <h1>
+                <span id="hour">00</span> :
+                <span id="min">00</span> :
+                <span id="sec">00</span> :
+                <span id="milisec">00</span>
+            </h1>
+            
+            <script>
+                    start();
+
+                    var x;
+                
+                function start() {
+                    x = setInterval(timer, 10);
+                } /* Start */
+                
+                var milisec = 0;
+                var sec = 0; /* holds incrementing value */
+                var min = 0;
+                var hour = 0;
+                
+                /* Contains and outputs returned value of  function checkTime */
+                
+                var miliSecOut = 0;
+                var secOut = 0;
+                var minOut = 0;
+                var hourOut = 0;
+                
+                /* Output variable End */
+                
+                function timer() {
+                    /* Main Timer */
+                
+                    miliSecOut = checkTime(milisec);
+                    secOut = checkTime(sec);
+                    minOut = checkTime(min);
+                    hourOut = checkTime(hour);
+                
+                    milisec = ++milisec;
+                
+                    if (milisec === 100) {
+                    milisec = 0;
+                    sec = ++sec;
+                    }
+                
+                    if (sec == 60) {
+                    min = ++min;
+                    sec = 0;
+                    }
+                
+                    if (min == 60) {
+                    min = 0;
+                    hour = ++hour;
+                
+                    }
+                
+                
+                    document.getElementById("milisec").innerHTML = miliSecOut;
+                    document.getElementById("sec").innerHTML = secOut;
+                    document.getElementById("min").innerHTML = minOut;
+                    document.getElementById("hour").innerHTML = hourOut;
+                
+                }
+                
+                /* Adds 0 when value is <10 */
+                
+                function checkTime(i) {
+                    if (i < 10) {
+                    i = "0" + i;
+                    }
+                    return i;
+                }
+            </script>
+       </div> 
+    </body>
+</html>

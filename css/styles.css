@@ -24,3 +24,8 @@ body, html {
   bottom: 0;
   justify-content: center;
 }
+
+.column-them-up {
+  display: flex;
+  flex-flow: column;
+}

@@ -1,6 +1,7 @@
 body, html {
     height: 100%;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
   }
   
 .background {
@@ -16,4 +17,10 @@ body, html {
 
 .stopwatch {
   position: absolute;
+  color: white;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  justify-content: center;
 }

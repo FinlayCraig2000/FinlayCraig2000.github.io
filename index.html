@@ -10,99 +10,22 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/js/stopwatch.js" async defer></script>
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-        <img src=https://cdn.discordapp.com/attachments/306179381301084170/821117709201702922/urgot.png>
-        
-        <script src="" async defer></script>
-
-        <audio id="musicplayer" autoplay loop>
-            <source src="/urgot.wav">
+        <audio class="audio" id="musicplayer" autoplay loop>
+            <source src="/public/Urgot_Battlecast_Laugh_0.ogg">
         </audio>
-
-
         
-       <div>
-
-            <!-- create 3 stopwatches temp -->
+       <div class="stopwatch">
             <h1>
                 <span id="hour">00</span> :
                 <span id="min">00</span> :
                 <span id="sec">00</span> :
                 <span id="milisec">00</span>
             </h1>
-            
-            <script>
-                    start();
-
-                    var x;
-                
-                function start() {
-                    x = setInterval(timer, 10);
-                } /* Start */
-                
-                var milisec = 0;
-                var sec = 0; /* holds incrementing value */
-                var min = 0;
-                var hour = 0;
-                
-                /* Contains and outputs returned value of  function checkTime */
-                
-                var miliSecOut = 0;
-                var secOut = 0;
-                var minOut = 0;
-                var hourOut = 0;
-                
-                /* Output variable End */
-                
-                function timer() {
-                    /* Main Timer */
-                
-                    miliSecOut = checkTime(milisec);
-                    secOut = checkTime(sec);
-                    minOut = checkTime(min);
-                    hourOut = checkTime(hour);
-                
-                    milisec = ++milisec;
-                
-                    if (milisec === 100) {
-                    milisec = 0;
-                    sec = ++sec;
-                    }
-                
-                    if (sec == 60) {
-                    min = ++min;
-                    sec = 0;
-                    }
-                
-                    if (min == 60) {
-                    min = 0;
-                    hour = ++hour;
-                
-                    }
-                
-                
-                    document.getElementById("milisec").innerHTML = miliSecOut;
-                    document.getElementById("sec").innerHTML = secOut;
-                    document.getElementById("min").innerHTML = minOut;
-                    document.getElementById("hour").innerHTML = hourOut;
-                
-                }
-                
-                /* Adds 0 when value is <10 */
-                
-                function checkTime(i) {
-                    if (i < 10) {
-                    i = "0" + i;
-                    }
-                    return i;
-                }
-            </script>
        </div> 
     </body>
 </html>

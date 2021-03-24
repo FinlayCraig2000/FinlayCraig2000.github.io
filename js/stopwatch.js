@@ -1,5 +1,7 @@
 start()
 
+// Copy and paste code :)
+
 var x;
 
 function start() {

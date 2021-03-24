@@ -8,9 +8,12 @@ body, html {
   background-image: url("https://cdn.discordapp.com/attachments/306179381301084170/821117709201702922/urgot.png");
   height: 100%;
 
+  background-color: black;
+
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto;
+  background-position: center;
 
   position: relative;
 }

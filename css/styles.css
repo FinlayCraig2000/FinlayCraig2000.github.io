@@ -28,4 +28,5 @@ body, html {
 .column-them-up {
   display: flex;
   flex-flow: column;
+  align-items: center;
 }
